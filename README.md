@@ -58,9 +58,9 @@ I contribute to open-source projects focused on developer tooling, accessibility
 
 ## 📫 How to reach me
 - Email: hello@your-email.com
-- Website: https://your-website.example.com
-- LinkedIn: https://www.linkedin.com/in/your-linkedin
-- Twitter: https://twitter.com/your_twitter_handle
+- Website: XXX
+- LinkedIn: XXX
+- Twitter: XXX
 
 ---
 
