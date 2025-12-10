@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Project One",
+    "description": "A sleek web app that simplifies X; built with Next.js + GraphQL.",
+    "url": "https://github.com/aerrystaw/project-one",
+    "tech": "Next.js · TypeScript"
+  },
+  {
+    "name": "Project Two",
+    "description": "Tiny library that does Y with zero dependencies.",
+    "url": "https://github.com/aerrystaw/project-two",
+    "tech": "TypeScript"
+  },
+  {
+    "name": "Project Three",
+    "description": "CLI tool for automating Z tasks.",
+    "url": "https://github.com/aerrystaw/project-three",
+    "tech": "Node.js · Commander"
+  }
+]
