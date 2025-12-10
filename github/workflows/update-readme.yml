@@ -1,0 +1,43 @@
+name: Update README
+
+on:
+  schedule:
+    # Runs daily at 00:00 UTC (adjust cron as desired)
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies (none required, but safe)
+        run: |
+          if [ -f package.json ]; then npm ci; fi
+
+      - name: Generate README
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+        run: |
+          node scripts/generate-readme.js
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "${{ github.actor }} (github-actions)"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: regenerate README" || echo "No changes to commit"
+          git push origin HEAD:${{ github.ref_name }}
